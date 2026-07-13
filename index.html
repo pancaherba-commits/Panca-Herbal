@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Panca Herbal - Portal Informasi Produk Resmi</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: {
+                                50: '#f0fdf4',
+                                100: '#dcfce7',
+                                500: '#22c55e',
+                                600: '#16a34a',
+                                700: '#15803d',
+                                800: '#166534',
+                                950: '#052e16',
+                            },
+                            yellow: {
+                                50: '#fffbeb',
+                                100: '#fef3c7',
+                                400: '#fbbf24',
+                                500: '#f59e0b',
+                                600: '#d97706',
+                                700: '#b45309',
+                            }
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #16a34a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #15803d;
+        }
+        .scrollbar-none::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-none {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Toast Notification System -->
+    <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2 max-w-sm pointer-events-none"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white border-b border-slate-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo (logo1_3.jpg) -->
+                <div class="flex items-center gap-3">
+                    <img src="logo1_3.jpg" alt="Logo Panca Herbal" onerror="this.src='https://placehold.co/180x50/16a34a/ffffff?text=Panca+Herbal'" class="h-12 sm:h-14 object-contain rounded-lg">
+                    <div class="hidden sm:block border-l border-slate-200 pl-3">
+                        <span class="text-[10px] font-bold tracking-wider text-brand-yellow-600 uppercase">Portal Informasi Resmi</span>
+                        <h1 class="text-sm font-extrabold text-slate-900 leading-none">Panca Herbal</h1>
+                    </div>
+                </div>
+
+                <!-- Call to Action (WhatsApp Consult) -->
+                <div>
+                    <a href="https://wa.me/628112424011" target="_blank" class="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold rounded-xl shadow-md shadow-emerald-600/10 transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span class="hidden sm:inline">Konsultasi Apoteker</span>
+                        <span class="sm:hidden">Konsultasi</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Jump Navigation Bar (All Caps, No Icons) -->
+    <div class="sticky top-20 z-30 bg-emerald-950 text-emerald-100 py-3 shadow-md border-t border-emerald-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-center gap-4 sm:gap-10 overflow-x-auto whitespace-nowrap scrollbar-none text-xs sm:text-sm font-bold tracking-widest">
+                <span class="text-brand-yellow-400 hidden md:inline">LOMPAT KE:</span>
+                <a href="#parama" class="px-3.5 py-1.5 hover:text-white hover:bg-white/10 rounded-lg transition-all">
+                    PARAMA SPECIAL CREAM
+                </a>
+                <a href="#sukalief" class="px-3.5 py-1.5 hover:text-white hover:bg-white/10 rounded-lg transition-all">
+                    SUSU SUKALIEF
+                </a>
+                <a href="#neonutrimix" class="px-3.5 py-1.5 hover:text-white hover:bg-white/10 rounded-lg transition-all">
+                    MADU NEONUTRIMIX
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-16">
+
+        <!-- Hero Informational Banner -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-brand-green-800 to-emerald-950 rounded-3xl text-white shadow-xl p-8 sm:p-14">
+            <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-brand-yellow-400 opacity-15 rounded-full blur-3xl"></div>
+            <div class="absolute right-1/4 top-10 w-48 h-48 bg-brand-green-500 opacity-10 rounded-full blur-2xl"></div>
+            
+            <div class="relative z-10 max-w-3xl space-y-5">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-yellow-400 text-brand-green-950 shadow-md">
+                    <i class="fa-solid fa-shield-halved"></i> 100% Produk Herbal Teruji Klinis & Terdaftar BPOM
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">
+                    Sistem Edukasi & <br><span class="text-brand-yellow-400">Product Knowledge</span> Terpercaya
+                </h2>
+                <p class="text-emerald-100/90 text-sm sm:text-base leading-relaxed">
+                    Selamat datang di portal informasi resmi <strong>Toko Panca Herbal</strong>. Kami menyajikan ulasan ilmiah, khasiat murni, jaminan keaslian bahan, dan panduan lengkap dari setiap produk kesehatan premium kami. Kami berkomitmen mendampingi perjalanan kesehatan Anda secara transparan dan aman.
+                </p>
+                <div class="flex flex-wrap gap-3 pt-3">
+                    <a href="https://wa.me/628112424011" target="_blank" class="px-6 py-3 bg-brand-yellow-500 hover:bg-brand-yellow-600 text-slate-950 font-bold rounded-xl shadow-lg shadow-brand-yellow-600/20 transition-all flex items-center gap-2 text-sm">
+                        <i class="fa-solid fa-user-doctor"></i> Chat Apoteker Berlisensi
+                    </a>
+                    <a href="#parama" class="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-xl transition-all flex items-center gap-2 text-sm">
+                        Mulai Pelajari Produk <i class="fa-solid fa-arrow-down text-brand-yellow-400"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 1: PARAMA CREAM (Single Column Premium Text-Only Layout) ================= -->
+        <section id="parama" class="scroll-mt-36 bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden p-8 sm:p-12 space-y-8">
+            <!-- Header Info -->
+            <div class="border-b border-slate-100 pb-6 space-y-3">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 font-extrabold text-[10px] tracking-widest uppercase rounded-full">KOSMETIKA / VITALITAS PRIA</span>
+                <h3 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-wide">PARAMA SPECIAL CREAM FOR MEN</h3>
+                <p class="text-xs sm:text-sm text-brand-yellow-600 font-bold italic">“Sekali Oles, Bikin Istri Makin Gregetan!”</p>
+                
+                <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-xs font-semibold text-slate-500">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-certificate text-brand-yellow-500"></i> No. Registrasi BPOM: <strong class="text-slate-800">NA18250105512</strong></span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-industry text-brand-green-600"></i> Produsen: <strong class="text-slate-800">CV INVESTAMA JAYA PERKASA</strong></span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-box text-blue-500"></i> Netto: <strong class="text-slate-800">20 Gram</strong></span>
+                </div>
+            </div>
+
+            <!-- Content Grid for details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 pt-4">
+                <!-- Deskripsi & Khasiat -->
+                <div class="space-y-4">
+                    <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Deskripsi & Khasiat Utama</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        <strong>Krim Parama</strong> adalah sediaan kosmetika krim topikal premium yang dirancang khusus untuk pria dewasa dalam meningkatkan stamina hubungan pasutri, menambah ukuran area vital, menjaga ketahanan organ intim, serta mengatasi keluhan ejakulasi dini secara klinis dan aman.
+                    </p>
+                    <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2 pt-2">Bahan Herbal Alami Terpilih</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Diformulasikan dengan memadukan ekstrak herbal alami nusantara pilihan berkualitas tinggi: <strong>Ekstrak Jahe Merah</strong> untuk sensasi hangat alami memperlancar sirkulasi darah, <strong>Minyak Lintah Papua</strong>, serta <strong>Minyak Bulus</strong> untuk menutrisi struktur jaringan kulit secara aman.
+                    </p>
+                </div>
+
+                <!-- Keunggulan & Cara Penggunaan -->
+                <div class="space-y-6">
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Keunggulan & Keistimewaan</h4>
+                        <ul class="space-y-2.5 text-xs text-slate-600">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Terbuat dari bahan herbal alami murni berkhasiat tanpa campuran kimia berbahaya.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Sama sekali <strong>TIDAK</strong> mengandung Zat Sildenafil kimia yang berbahaya bagi kesehatan jantung.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Formulasi khusus yang aman dari efek samping panas menyengat, mati rasa (kebas), atau iritasi kulit.</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-check text-brand-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span>Krim beraroma wangi parfum mewah, memberikan sensasi dingin awal yang cepat meresap di kulit.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Cara Penggunaan yang Tepat</h4>
+                        <ol class="space-y-2 text-xs text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <span class="font-bold text-brand-yellow-600">1.</span>
+                                <span>Oleskan krim secara tipis dan merata pada bagian batang vital (pastikan tidak terkena lubang kencing).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="font-bold text-brand-yellow-600">2.</span>
+                                <span>Biarkan selama 30 menit hingga formula aktif meresap dan memicu reaksi sensasi hangat alami yang nyaman.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="font-bold text-brand-yellow-600">3.</span>
+                                <span>Bilas atau cuci bersih dengan air mengalir (bersifat opsional/sesuai kenyamanan pasutri).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="font-bold text-brand-yellow-600">4.</span>
+                                <span>Gunakan rutin setiap malam disertai pijatan/urut lembut untuk hasil kesehatan vitalitas jangka panjang yang maksimal.</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 2: SUSU SUKALIEF (Single Column Premium Text-Only Layout) ================= -->
+        <section id="sukalief" class="scroll-mt-36 bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden p-8 sm:p-12 space-y-8">
+            <!-- Header Info -->
+            <div class="border-b border-slate-100 pb-6 space-y-3">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 font-extrabold text-[10px] tracking-widest uppercase rounded-full">MINUMAN SEHAT / NUTRISI ETAWA</span>
+                <h3 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-wide">SUSU KAMBING ETAWA SUKALIEF</h3>
+                <p class="text-xs sm:text-sm text-brand-green-600 font-bold italic">“Proses Modern Formulasi Rendah Gula Jagung”</p>
+                
+                <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-xs font-semibold text-slate-500">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-certificate text-brand-yellow-500"></i> No. Registrasi BPOM: <strong class="text-slate-800">MD 803111052479</strong></span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-industry text-brand-green-600"></i> Produsen: <strong class="text-slate-800">ARBAIN JAYA MANDIRI</strong></span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-box text-blue-500"></i> Netto: <strong class="text-slate-800">200 Gram</strong></span>
+                </div>
+            </div>
+
+            <!-- Content Grid for details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 pt-4">
+                <!-- Deskripsi & Komposisi -->
+                <div class="space-y-6">
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Deskripsi & Keunggulan Formulasi</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            <strong>Susu Kambing Sukalief</strong> adalah minuman susu kambing etawa pilihan kelas premium yang diolah higienis dan modern. Memiliki kandungan nutrisi makro-mikro harian lengkap yang sangat ramah terhadap saluran pernapasan maupun pencernaan. Dengan karakteristik kandungan rendah gula dari pemanis alami <strong>gula jagung</strong>, susu ini sangat aman dinikmati pengidap diabetes.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Komposisi Bahan Unggulan</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                                <span class="text-xs font-bold text-slate-800 block">Susu Kambing Bubuk</span>
+                                <p class="text-[10px] text-slate-400 mt-1">Murni & bebas bau amis</p>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                                <span class="text-xs font-bold text-slate-800 block">Krimer Nabati</span>
+                                <p class="text-[10px] text-slate-400 mt-1">Tekstur lembut & lezat</p>
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 text-center">
+                                <span class="text-xs font-bold text-slate-800 block">Gula Jagung Alami</span>
+                                <p class="text-[10px] text-slate-400 mt-1">Rendah kalori & aman diabetes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Khasiat & Saran Penyajian -->
+                <div class="space-y-6">
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Khasiat & Manfaat Kesehatan Teruji</h4>
+                        <ul class="space-y-2.5 text-xs text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-chevron-right text-brand-yellow-500 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Kesehatan Pernapasan:</strong> Sangat efektif mengatasi gangguan asma, TBC, bronkitis, infeksi bakteri paru-paru, serta melegakan tenggorokan.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-chevron-right text-brand-yellow-500 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Kekuatan Tulang & Gigi:</strong> Mengandung kalsium tinggi guna mendukung masa tumbuh kembang anak serta mencegah terjadinya pengeroposan tulang (osteoporosis) pada manula.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-chevron-right text-brand-yellow-500 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Menyehatkan Pencernaan:</strong> Menetralisir asam lambung tinggi (Maag/GERD) secara bertahap dan melancarkan pencernaan usus.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-chevron-right text-brand-yellow-500 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Imunitas Tubuh:</strong> Mempercepat pemulihan tubuh paska sakit dan memperkuat daya tahan harian dari infeksi musiman.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Saran Penyajian</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            Larutkan 2-3 sendok makan Susu Kambing Sukalief ke dalam segelas air hangat kuku (tidak mendidih agar kandungan nutrisi protein tidak rusak). Bagus dikonsumsi 2 kali sehari secara rutin. Dapat juga dicampur dengan sedikit madu murni untuk pendongkrak ganda sistem kekebalan tubuh keluarga.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SECTION 3: MADU NEONUTRIMIX (Single Column Premium Text-Only Layout) ================= -->
+        <section id="neonutrimix" class="scroll-mt-36 bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden p-8 sm:p-12 space-y-8">
+            <!-- Header Info -->
+            <div class="border-b border-slate-100 pb-6 space-y-3">
+                <span class="px-3 py-1 bg-slate-100 text-slate-700 font-extrabold text-[10px] tracking-widest uppercase rounded-full">OBAT TRADISIONAL / TUMBUH KEMBANG ANAK</span>
+                <h3 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-wide">MADU ANAK NEO NUTRIMIX</h3>
+                <p class="text-xs sm:text-sm text-brand-green-600 font-bold italic">“Nutrisi Kaya Vitamin & Serat Alami dari 11 Buah & Sayur”</p>
+                
+                <div class="flex flex-wrap gap-x-6 gap-y-2 pt-2 text-xs font-semibold text-slate-500">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-certificate text-brand-yellow-500"></i> No. Registrasi BPOM: <strong class="text-slate-800">TR193623151</strong></span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-industry text-brand-green-600"></i> Produsen: <strong class="text-slate-800">PT HEKSATAMAPRIMA</strong></span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-box text-blue-500"></i> Netto: <strong class="text-slate-800">330 Gram</strong></span>
+                </div>
+            </div>
+
+            <!-- Content Grid for details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 pt-4">
+                <!-- Deskripsi & Komposisi -->
+                <div class="space-y-6">
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Deskripsi & Peran Nutrisi Tumbuh Kembang</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Nutrisi memegang peranan krusial dalam menunjang tumbuh kembang kognitif dan fisik anak. <strong>Neonutrimix</strong> diformulasikan sebagai sediaan madu herbal multivitamin yang memadukan khasiat madu murni dengan ekstrak 11 buah-buahan dan sayur-sayuran kaya serat guna memperbaiki metabolisme dan menstimulasi imunitas tubuh si kecil.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">11 Kandungan Alami Komplit</h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Madu Murni</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Kurma</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Ekstrak Zaitun</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Delima</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Temulawak</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Bunga Rosella</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Habbatussauda</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Blueberry</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Kulit Manggis</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Daun Sirsak</span>
+                            <span class="px-2.5 py-1.5 bg-slate-50 text-slate-700 text-xs font-semibold rounded-lg border border-slate-100 block text-center">Buah Anggur</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Khasiat & Aturan Pakai -->
+                <div class="space-y-6">
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Manfaat Nyata bagi Tumbuh Kembang</h4>
+                        <ul class="space-y-2.5 text-xs text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-brand-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Menambah Nafsu Makan:</strong> Mengatasi keluhan anak yang "GTM" atau pilih-pilih makanan agar tumbuh kembang fisik dan berat badan anak melesat ideal.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-brand-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Melengkapi Gizi Harian:</strong> Memasok vitamin kompleks dan serat pangan alami yang dibutuhkan sel-sel tubuh harian anak.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-brand-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Meningkatkan Stamina & Imunitas:</strong> Menjadikan anak tetap aktif bermain, berkonsentrasi belajar, serta terlindung dari risiko demam, batuk, dan pilek musiman.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fa-solid fa-circle-check text-brand-green-600 mt-0.5 flex-shrink-0"></i>
+                                <span><strong>Mendukung Kesehatan Mata:</strong> Nutrisi kaya antioksidan membantu menyehatkan penglihatan mata anak dari paparan radiasi gawai/layar digital.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-100 pb-2">Cara Pemberian</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">
+                            Dapat langsung diberikan 1-2 sendok takar langsung ke anak, atau dilarutkan ke dalam segelas air hangat/dingin sebagai pengganti sirup manis buatan, dicampur langsung ke susu formula harian, maupun dinikmati sebagai topping selai lezat bersama camilan seperti pancake atau roti panggang sehat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consultation Section -->
+        <section class="bg-gradient-to-tr from-brand-yellow-500 to-amber-600 rounded-3xl p-8 sm:p-12 text-slate-950 text-center space-y-6 shadow-xl">
+            <h3 class="text-2xl sm:text-4xl font-extrabold tracking-tight">Butuh Konsultasi Kesehatan Personal?</h3>
+            <p class="max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-medium text-slate-900">
+                Hubungi Apoteker berlisensi kami hari ini secara gratis! Konsultasikan keluhan penyakit, dosis pakai herba, atau dapatkan anjuran terbaik langsung ke WhatsApp tim layanan kesehatan resmi kami.
+            </p>
+            <div class="flex justify-center">
+                <a href="https://wa.me/628112424011" target="_blank" class="px-8 py-4 bg-slate-950 hover:bg-slate-900 text-white font-extrabold text-sm sm:text-base rounded-xl shadow-2xl transition-all flex items-center gap-3">
+                    <i class="fa-brands fa-whatsapp text-2xl text-emerald-400 animate-pulse"></i> Hubungi WhatsApp Resmi Sekarang
+                </a>
+            </div>
+            <p class="text-xs text-slate-800 font-bold tracking-wider uppercase">Layanan Respon Cepat & Ramah</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 mt-20 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Branding -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="logo1_3.jpg" alt="Logo Panca Herbal" onerror="this.src='https://placehold.co/180x50/16a34a/ffffff?text=Panca+Herbal'" class="h-10 object-contain rounded-lg">
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                        Toko Panca Herbal berkomitmen menyebarkan edukasi herbal yang transparan dan akurat. Menyediakan aneka racikan obat herbal bermutu tinggi, berkhasiat nyata, dan teruji BPOM RI demi kesehatan masa depan keluarga Anda.
+                    </p>
+                </div>
+
+                <!-- Fast Jump Links (All Caps, No Icons) -->
+                <div class="space-y-4">
+                    <h5 class="font-extrabold text-white text-sm uppercase tracking-wider">NAVIGASI INFORMASI</h5>
+                    <ul class="space-y-2 text-xs sm:text-sm tracking-wide">
+                        <li><a href="#parama" class="hover:text-brand-yellow-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> PARAMA SPECIAL CREAM FOR MEN</a></li>
+                        <li><a href="#sukalief" class="hover:text-brand-yellow-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> SUSU KAMBING ETAWA SUKALIEF</a></li>
+                        <li><a href="#neonutrimix" class="hover:text-brand-yellow-400 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-angle-right text-[10px]"></i> MADU ANAK NEO NUTRIMIX</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacts & Address -->
+                <div class="space-y-4">
+                    <h5 class="font-extrabold text-white text-sm uppercase tracking-wider">Kontak & Alamat Portal</h5>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-slate-400">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
+                            <a href="https://wa.me/628112424011" target="_blank" class="hover:text-white transition-all">+62 811-2424-011</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-brand-yellow-500 text-lg mt-0.5"></i>
+                            <span>Jl. Raya K H Abdul Halim No.439, Tonjong, Kec. Majalengka, Kabupaten Majalengka, Jawa Barat</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+                <p>&copy; 2026 Toko Panca Herbal - Portal Edukasi Kesehatan Anda. All Rights Reserved.</p>
+                <div class="flex gap-4">
+                    <span class="text-brand-yellow-500 font-bold uppercase tracking-widest">Premium Herbal Grade-A</span>
+                    <span class="text-brand-green-500 font-bold uppercase tracking-widest">Informational Edition</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING ACTION & DRAWER ELEMENTS ================= -->
+
+    <!-- Floating AI Assistant Button (Left Corner) -->
+    <button onclick="toggleAiChat()" class="fixed bottom-6 left-6 z-40 bg-gradient-to-tr from-brand-green-600 to-amber-500 hover:from-brand-green-700 hover:to-amber-600 text-white font-bold p-4 rounded-full shadow-2xl hover:scale-105 transition-all flex items-center gap-2 group cursor-pointer">
+        <span class="relative flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-yellow-400"></span>
+        </span>
+        <i class="fa-solid fa-robot text-2xl"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-out whitespace-nowrap text-sm font-semibold">Konsultasi Apoteker AI</span>
+    </button>
+
+    <div id="ai-chat-panel" class="fixed bottom-24 left-6 z-50 w-80 sm:w-96 h-[550px] bg-white rounded-3xl border border-slate-100 shadow-2xl flex flex-col hidden transition-all duration-300 transform translate-y-4 opacity-0">
+        <!-- AI Chat Header -->
+        <div class="p-4 bg-gradient-to-r from-brand-green-800 to-emerald-950 text-white rounded-t-3xl flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center text-brand-yellow-400">
+                    <i class="fa-solid fa-user-doctor text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="font-extrabold text-sm tracking-tight">Apoteker AI Panca Herbal</h4>
+                    <p class="text-[10px] text-emerald-300 flex items-center gap-1"><span class="w-1.5 h-1.5 bg-emerald-400 rounded-full inline-block animate-pulse"></span> Konsultan Herbal 24/7</p>
+                </div>
+            </div>
+            <button onclick="toggleAiChat()" class="p-1.5 bg-white/10 text-white hover:bg-white/20 rounded-xl transition-all">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+        </div>
+
+        <!-- AI Chat Messages Area -->
+        <div id="ai-chat-messages" class="flex-grow overflow-y-auto p-4 space-y-3 bg-slate-50 text-xs">
+            <div class="flex gap-2.5 items-start max-w-[85%]">
+                <div class="w-8 h-8 bg-brand-green-100 text-brand-green-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-100 shadow-sm text-slate-700 leading-relaxed">
+                    Halo Kak! Selamat datang di Toko Panca Herbal. 🌿<br><br>Saya adalah <strong>Apoteker AI</strong> yang siap menjelaskan manfaat, komposisi alami, khasiat, dan cara pakai terbaik produk kami untuk keluhan kesehatan Kakak.<br><br>Ada keluhan apa yang sedang dirasakan hari ini?
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Suggestion Chips -->
+        <div class="px-4 py-2 bg-slate-50 border-t border-slate-100 flex gap-2 overflow-x-auto whitespace-nowrap scrollbar-none">
+            <button onclick="sendAiSuggestion('Boleh tolong jelaskan khasiat Madu Neo Nutrimix secara lengkap?')" class="px-3 py-1.5 bg-white hover:bg-brand-green-50 border border-slate-200 hover:border-brand-green-300 text-[10px] font-semibold text-slate-600 hover:text-brand-green-700 rounded-full transition-all">👶 Manfaat Madu Nutrimix</button>
+            <button onclick="sendAiSuggestion('Apa benar Susu Kambing Sukalief bagus untuk asma dan diabetes?')" class="px-3 py-1.5 bg-white hover:bg-brand-green-50 border border-slate-200 hover:border-brand-green-300 text-[10px] font-semibold text-slate-600 hover:text-brand-green-700 rounded-full transition-all">🫁 Asma & Diabetes</button>
+            <button onclick="sendAiSuggestion('Bagaimana cara pakai Parama Special Cream dan komposisi di dalamnya?')" class="px-3 py-1.5 bg-white hover:bg-brand-green-50 border border-slate-200 hover:border-brand-green-300 text-[10px] font-semibold text-slate-600 hover:text-brand-green-700 rounded-full transition-all">⚡ Khasiat Krim Parama</button>
+        </div>
+
+        <!-- AI Chat Input Box -->
+        <div class="p-3 bg-white border-t border-slate-100 rounded-b-3xl flex gap-2 items-center">
+            <input type="text" id="ai-chat-input" onkeypress="handleAiKeyPress(event)" placeholder="Ketik keluhan atau pertanyaan Anda di sini..." class="flex-grow px-3.5 py-2.5 bg-slate-50 focus:bg-white border border-slate-200 focus:border-brand-green-500 focus:ring-1 focus:ring-brand-green-500 rounded-xl text-xs font-medium text-slate-800 outline-none">
+            <button onclick="sendAiMessage()" class="w-9 h-9 bg-brand-green-600 hover:bg-brand-green-700 text-white rounded-xl flex items-center justify-center shadow-lg shadow-brand-green-600/15 transition-all">
+                <i class="fa-solid fa-paper-plane text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC & GEMINI INTEGRATION ================= -->
+    <script type="module">
+        let aiChatHistory = [];
+        const geminiApiKey = ""; // Masukkan API Key Gemini Anda di sini jika ingin menggunakan AI secara independen
+
+        const systemPrompt = `Anda adalah Apoteker AI resmi dan terpercaya dari Toko Panca Herbal. Tugas Anda adalah memberikan konsultasi kesehatan yang ramah, profesional, solutif, dan penuh empati kepada pelanggan. Anda harus selalu mendengarkan keluhan mereka dengan sabar, lalu menjelaskan khasiat produk Panca Herbal yang sesuai secara akurat berdasarkan keluhan tersebut.
+
+        Gunakan data resmi produk berikut yang diekstrak langsung dari Product Knowledge resmi kami:
+        
+        1. Madu Anak Neo Nutrimix (Referensi file: "Product Knowledge Madu Neonutrimix.pdf"):
+           - Legalitas BPOM: POM TR 193 623 151 (Diproduksi oleh PT HEKSATAMAPRIMA)
+           - Khasiat / Benefit: Membantu memperbaiki metabolisme tubuh, melengkapi nutrisi harian anak yang susah makan (GTM), menambah nafsu makan, mendukung kesehatan mata, serta meningkatkan stamina/daya tahan tubuh anak dari penularan virus penyakit. Memiliki 11 komposisi buah dan sayur (madu murni, kurma, zaitun, delima, temulawak, rosella, habbatussauda, blueberry, manggis, sirsak, anggur).
+
+        2. Susu Kambing Etawa Sukalief (Referensi file: "Product Knowledge Sukalief.pdf"):
+           - Legalitas BPOM: MD 803111052479 (Arbain Jaya Mandiri)
+           - Khasiat / Benefit: Sangat efektif mengatasi gangguan pernapasan (Asma, TBC, Bronkitis, Infeksi Paru-paru), menguatkan tulang, sendi, dan gigi, menyehatkan lambung (Maag/GERD) & usus, serta aman dikonsumsi pengidap diabetes karena rendah gula jagung. 
+
+        3. Parama Special Cream for Man (Referensi file: "Product Knowledge Parama New 2026.pdf"):
+           - Legalitas BPOM: NA18250105512 (CV INVESTAMA JAYA PERKASA)
+           - Khasiat: Mengatasi keluhan Ejakulasi Dini pria dewasa, meningkatkan durasi ketahanan intimasi secara optimal, memberi rasa hangat nyaman dari jahe merah tanpa efek samping kebas/mati rasa, dingin, cepat meresap di kulit, beraroma parfum premium. Komposisi: Jahe Merah, Minyak Lintah Papua, Minyak Bulus.
+
+        Aturan Komunikasi:
+        - PERINGATAN: Jangan sebutkan harga atau transaksi karena situs kami sekarang murni bersifat portal informasi / product knowledge edukatif. Pengunjung dapat diarahkan untuk konsultasi lebih mendalam ke admin WA.
+        - Bersikap ramah, sopan, empati, dan gunakan sapaan hangat seperti "Kak", "Bapak", "Ibu".
+        - Rekomendasikan produk dengan transparan mengenai khasiat dan manfaat kesehatannya.
+        - Fokus penuh pada konsultasi kesehatan serta portofolio produk Panca Herbal.`;
+
+        window.onload = () => {
+            initAiScroll();
+        };
+
+        window.toggleAiChat = () => {
+            const panel = document.getElementById('ai-chat-panel');
+            const isHidden = panel.classList.contains('hidden');
+
+            if (isHidden) {
+                panel.classList.remove('hidden');
+                setTimeout(() => {
+                    panel.classList.remove('opacity-0', 'translate-y-4');
+                    panel.classList.add('opacity-100', 'translate-y-0');
+                }, 10);
+                initAiScroll();
+            } else {
+                panel.classList.add('opacity-0', 'translate-y-4');
+                panel.classList.remove('opacity-100', 'translate-y-0');
+                setTimeout(() => {
+                    panel.classList.add('hidden');
+                }, 300);
+            }
+        };
+
+        window.sendAiSuggestion = (text) => {
+            document.getElementById('ai-chat-input').value = text;
+            window.sendAiMessage();
+        };
+
+        window.handleAiKeyPress = (event) => {
+            if (event.key === 'Enter') {
+                window.sendAiMessage();
+            }
+        };
+
+        function initAiScroll() {
+            const container = document.getElementById('ai-chat-messages');
+            if (container) container.scrollTop = container.scrollHeight;
+        }
+
+        window.sendAiMessage = async () => {
+            const inputField = document.getElementById('ai-chat-input');
+            const messageText = inputField.value.trim();
+            if (!messageText) return;
+
+            inputField.value = '';
+
+            const messagesContainer = document.getElementById('ai-chat-messages');
+
+            const userBubble = document.createElement('div');
+            userBubble.className = "flex gap-2.5 items-start justify-end max-w-[85%] ml-auto";
+            userBubble.innerHTML = `
+                <div class="bg-brand-green-600 text-white p-3 rounded-2xl rounded-tr-none shadow-sm text-slate-100 leading-relaxed">
+                    ${escapeHtml(messageText)}
+                </div>
+            `;
+            messagesContainer.appendChild(userBubble);
+            initAiScroll();
+
+            const typingBubble = document.createElement('div');
+            typingBubble.className = "flex gap-2.5 items-start max-w-[85%] id-ai-typing";
+            typingBubble.innerHTML = `
+                <div class="w-8 h-8 bg-brand-green-100 text-brand-green-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-100 shadow-sm text-slate-500 flex items-center gap-1">
+                    <span class="animate-bounce inline-block w-1.5 h-1.5 bg-brand-green-600 rounded-full"></span>
+                    <span class="animate-bounce inline-block w-1.5 h-1.5 bg-brand-green-600 rounded-full [animation-delay:0.2s]"></span>
+                    <span class="animate-bounce inline-block w-1.5 h-1.5 bg-brand-green-600 rounded-full [animation-delay:0.4s]"></span>
+                </div>
+            `;
+            messagesContainer.appendChild(typingBubble);
+            initAiScroll();
+
+            aiChatHistory.push({
+                role: "user",
+                parts: [{ text: messageText }]
+            });
+
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${geminiApiKey}`;
+
+            try {
+                const response = await fetchWithRetry(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: aiChatHistory,
+                        systemInstruction: {
+                            parts: [{ text: systemPrompt }]
+                        }
+                    })
+                });
+
+                const data = await response.json();
+                typingBubble.remove();
+
+                const aiResponseText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (aiResponseText) {
+                    aiChatHistory.push({
+                        role: "model",
+                        parts: [{ text: aiResponseText }]
+                    });
+
+                    const cleanHtmlContent = formatMarkdownToHtml(aiResponseText);
+
+                    const aiBubble = document.createElement('div');
+                    aiBubble.className = "flex gap-2.5 items-start max-w-[85%]";
+                    aiBubble.innerHTML = `
+                        <div class="w-8 h-8 bg-brand-green-100 text-brand-green-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="space-y-3 flex-grow">
+                            <div class="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-100 shadow-sm text-slate-700 leading-relaxed">
+                                ${cleanHtmlContent}
+                            </div>
+                        </div>
+                    `;
+                    messagesContainer.appendChild(aiBubble);
+                } else {
+                    throw new Error("Invalid format");
+                }
+
+            } catch (err) {
+                console.error("Gemini API Error:", err);
+                typingBubble.remove();
+
+                const errorBubble = document.createElement('div');
+                errorBubble.className = "flex gap-2.5 items-start max-w-[85%]";
+                errorBubble.innerHTML = `
+                    <div class="w-8 h-8 bg-rose-100 text-rose-700 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="bg-rose-50 p-3 rounded-2xl rounded-tl-none border border-rose-100 shadow-sm text-rose-800 leading-relaxed">
+                        Maaf Kak, saat ini asisten Apoteker AI kami mengalami sedikit kendala koneksi. 😢 Silakan klik tombol "Chat Apoteker" untuk langsung berkonsultasi via WhatsApp bersama Apoteker manusia kami secara gratis.
+                    </div>
+                `;
+                messagesContainer.appendChild(errorBubble);
+            }
+
+            initAiScroll();
+        };
+
+        function formatMarkdownToHtml(text) {
+            let escaped = text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            escaped = escaped.replace(/^\s*\*\s+(.*?)$/gm, '<li class="ml-4 list-disc">$1</li>');
+            escaped = escaped.replace(/\n/g, '<br>');
+            return escaped;
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+        }
+
+        async function fetchWithRetry(url, options, retries = 3, delay = 1000) {
+            try {
+                const response = await fetch(url, options);
+                if (!response.ok && response.status === 429 && retries > 0) {
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return fetchWithRetry(url, options, retries - 1, delay * 2);
+                }
+                return response;
+            } catch (error) {
+                if (retries > 0) {
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    return fetchWithRetry(url, options, retries - 1, delay * 2);
+                }
+                throw error;
+            }
+        }
+    </script>
+</body>
+</html>
